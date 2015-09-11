@@ -1,0 +1,3 @@
+module QuicksearchOpenLibrarySearcher
+  VERSION = "0.0.1"
+end
