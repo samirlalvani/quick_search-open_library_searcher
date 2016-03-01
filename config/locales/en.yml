@@ -7,4 +7,4 @@ en:
     error_service_message: "searching OpenLibrary"
     no_results_service_message: "a different search"
     no_results_link: "http://www.openlibrary.org/"
-    loaded_link: "http://www.openlibrary.org/"
+    loaded_link: "http://www.openlibrary.org/search?q="
