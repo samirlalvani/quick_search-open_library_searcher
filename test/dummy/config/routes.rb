@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount QuicksearchOpenLibrarySearcher::Engine => "/quicksearch_open_library_searcher"
+  mount QuickSearchOpenLibrarySearcher::Engine => "/quicksearch_open_library_searcher"
 end

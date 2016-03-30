@@ -1,4 +1,4 @@
 require "quicksearch_open_library_searcher/engine"
 
-module QuicksearchOpenLibrarySearcher
+module QuickSearchOpenLibrarySearcher
 end

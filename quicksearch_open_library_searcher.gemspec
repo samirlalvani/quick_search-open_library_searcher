@@ -6,7 +6,7 @@ require "quicksearch_open_library_searcher/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "quicksearch_open_library_searcher"
-  s.version     = QuicksearchOpenLibrarySearcher::VERSION
+  s.version     = QuickSearchOpenLibrarySearcher::VERSION
   s.authors     = ["Kevin Beswick"]
   s.email       = ["kdbeswic@ncsu.edu"]
   s.homepage    = "http://search.lib.ncsu.edu"

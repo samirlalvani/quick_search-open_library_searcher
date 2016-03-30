@@ -1,4 +1,4 @@
-# QuicksearchOpenLibrarySearcher
+# QuickSearchOpenLibrarySearcher
 
 ## Description
 

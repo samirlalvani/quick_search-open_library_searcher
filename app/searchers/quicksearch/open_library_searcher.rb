@@ -1,5 +1,5 @@
-module Quicksearch
-  class OpenLibrarySearcher < Quicksearch::Searcher
+module QuickSearch
+  class OpenLibrarySearcher < QuickSearch::Searcher
 
     def search
       resp = @http.get(base_url, parameters)
