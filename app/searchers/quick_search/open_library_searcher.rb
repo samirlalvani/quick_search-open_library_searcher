@@ -17,7 +17,7 @@ module QuickSearch
           result = OpenStruct.new
           result.title = title(value)
           result.link = build_link(value)
-          result.author = value['author_name'].join(', ')
+          result.author = author(value)
           result.date = value['first_publish_year']
           result.fulltext = value['has_fulltext']
           result.thumbnail = cover_image(value)
@@ -41,6 +41,14 @@ module QuickSearch
 
     def total
       @response['numFound']
+    end
+
+    def author(value)
+      if value.has_key?('author_name')
+        value['author_name'].join(', ')
+      else
+        ""
+      end
     end
 
     def loaded_link
