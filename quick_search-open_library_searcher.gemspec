@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://search.lib.ncsu.edu"
   s.summary     = "Open Library searcher for QuickSearch"
   s.description = "Open Library searcher gem engine plugin for QuickSearch"
+  s.license = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
