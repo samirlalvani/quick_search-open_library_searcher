@@ -1,12 +1,25 @@
-# QuickSearchOpenLibrarySearcher
+# QuickSearch Open Library Searcher
 
 ## Description
 
-This is a gem engine implementing an OpenLibrary searcher for QuickSearch.
+A QuickSearch searcher for Open Library (https://openlibrary.org/)
 
-## Usage
+## Installation
 
-To use, add 'quick_search_open_library_searcher' to your QuickSearch
-Gemfile, add the searcher to quick_search_config.yml, and add a
-render_module call into the app/views/search/index.html.erb results
-page.
+Include the searcher gem in your Gemfile:
+
+    gem 'quick_search-open_library_searcher'
+
+Include as a searcher in your config/quick_search_config.yml:
+
+    searchers = [open_library, ..., some_searcher]
+
+Run bundle install:
+
+    bundle install
+
+Include in your Search Results page (point to theme docs here for more info about this)
+
+     <%= render_module @open_library, 'open_library' %>
+
+For more general information about setting up searcher plugins in QuickSearch, see https://github.com/NCSU-Libraries/quick_search
