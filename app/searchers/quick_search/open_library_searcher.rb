@@ -2,7 +2,7 @@ module QuickSearch
   class OpenLibrarySearcher < QuickSearch::Searcher
 
     def search
-      resp = @http.get(base_url, parameters)
+      resp = @http.get(search_url)
       @response = JSON.parse(resp.body)
     end
 
@@ -13,14 +13,12 @@ module QuickSearch
       else
         @results_list = []
 
-        @response['docs'].first(@per_page).each do |value|
+        @response['search']['results'].each do |value|
           result = OpenStruct.new
           result.title = title(value)
           result.link = build_link(value)
           result.author = author(value)
-          result.date = value['first_publish_year']
-          result.fulltext = value['has_fulltext']
-          result.thumbnail = cover_image(value)
+          #result.date = value['id']
           @results_list << result
         end
 
@@ -29,50 +27,32 @@ module QuickSearch
 
     end
 
-    def base_url
-      "http://openlibrary.org/search.json"
-    end
-
-    def parameters
-      {
-        'q' => http_request_queries['not_escaped'],
-      }
-    end
-
-    def total
-      @response['numFound']
-    end
-
-    def author(value)
-      if value.has_key?('author_name')
-        value['author_name'].join(', ')
-      else
-        ""
-      end
+    def search_url
+      "https://api2.libanswers.com/1.0/search/" + http_request_queries['uri_escaped'] + "?iid=450&limit=3"
     end
 
     def loaded_link
-      "http://www.openlibrary.org/search?q=" + http_request_queries['uri_escaped']
+      "http://umd.libanswers.com/search?q=" + http_request_queries['uri_escaped']
     end
 
-    def build_link(value)
-      "http://www.openlibrary.org" + value['key']
+    def total
+      @response['search']['numFound']
     end
 
-    def title(value)
-      if value.has_key?('subtitle')
-        value['title'] + ': ' + value['subtitle']
-      else
-        value['title']
-      end
-    end
-
-    def cover_image(value)
-      if value.has_key?('cover_i')
-        "https://covers.openlibrary.org/w/id/" + value['cover_i'].to_s + "-M.jpg"
+    def author(value)
+      if value.has_key?('topics')
+        value['topics'].join(', ')
       else
         ""
       end
+    end
+
+    def build_link(value)
+      value['url']
+    end
+
+    def title(value)
+      value['question']
     end
 
   end
