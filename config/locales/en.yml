@@ -1,10 +1,9 @@
 en:
   open_library_search:
-    display_name: "OpenLibrary"
-    short_display_name: "OpenLibrary"
-    search_form_placeholder: "Search OpenLibrary"
-    module_callout: "Search OpenLibrary"
-    error_service_message: "searching OpenLibrary"
+    display_name: "Ask Us!"
+    short_display_name: "Ask Us!"
+    search_form_placeholder: "Search Ask Us!"
+    module_callout: "Search Ask Us!"
+    error_service_message: "searching Ask Us!"
     no_results_service_message: "a different search"
-    no_results_link: "http://www.openlibrary.org/"
-    loaded_link: "http://www.openlibrary.org/search?q="
+    no_results_link: "http://umd.libanswers.com/"
